@@ -3,7 +3,7 @@ from config import bot
 
 @bot.on(events.NewMessage(pattern="/start"))
 async def _(event):
-    await bot.send_message("Make sure to add me to the channel you are trying to post in.")
+    await bot.reply("Make sure to add me to the channel you are trying to post in.")
     async with bot.conversation(event.sender_id) as conv:
         await conv.send_message('Message Text: ')
         txt = await conv.get_response()
