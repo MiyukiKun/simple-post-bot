@@ -3,7 +3,7 @@ from config import bot
 
 @bot.on(events.NewMessage(pattern="/start"))
 async def _(event):
-    await bot.reply("Make sure to add me to the channel you are trying to post in.")
+    await event.reply("Make sure to add me to the channel you are trying to post in.")
     async with bot.conversation(event.sender_id) as conv:
         await conv.send_message('Message Text: ')
         txt = await conv.get_response()
@@ -18,7 +18,7 @@ async def _(event):
             cid = f"-100{cid}"
 
         msg = await bot.send_message(int(cid), f"`{txt}`", buttons=[Button.url(text="Click here to download", url=link)])
-        await bot.reply(f"Posted to channel\n\nt.me/c/{cid.replace('-100', '')/{msg.id}}")
+        await event.reply(f"Posted to channel\n\nt.me/c/{cid.replace('-100', '')/{msg.id}}")
 
 bot.start()
 
