@@ -18,7 +18,7 @@ async def _(event):
             cid = f"-100{cid}"
 
         msg = await bot.send_message(int(cid), f"`{txt}`", buttons=[Button.url(text="Click here to download", url=link)])
-        await event.reply(f"Posted to channel\n\nt.me/c/{cid.replace('-100', '')/{msg.id}}")
+        await event.reply(f"Posted to channel\n\n t.me/c/{cid.replace('-100', '')}/{msg.id}")
 
 bot.start()
 
