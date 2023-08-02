@@ -17,7 +17,7 @@ async def _(event):
         if not cid.startswith("-100"):
             cid = f"-100{cid}"
 
-        msg = await bot.send_message(int(cid), txt, buttons=[Button.url(text="Click here to download", url=link)])
+        msg = await bot.send_message(int(cid), f"`{txt}`", buttons=[Button.url(text="Click here to download", url=link)])
         await bot.reply(f"Posted to channel\n\nt.me/c/{cid.replace('-100', '')/{msg.id}}")
 
 bot.start()
