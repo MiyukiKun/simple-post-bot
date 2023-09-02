@@ -69,7 +69,7 @@ async def _(event):
         
         m = await bot.get_messages(int(cid), ids=msgid)
         await m.edit(buttons=buttons)
-        await event.reply(f"Edited Successfully:\n{mlink}")
+        await event.reply(f"Edited Successfully:\n{mlink.raw_text}")
 
 
 bot.start()
