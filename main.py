@@ -25,7 +25,7 @@ async def _(event):
                 link = await conv.get_response()
                 link = link.raw_text
                 temp.append(Button.url(text=btxt, url=link))
-        buttons.append(temp)
+            buttons.append(temp)
         await conv.send_message('Target Channel Id: ')
         cid = await conv.get_response()
         cid = cid.raw_text
